@@ -22,7 +22,7 @@ acc = g*(sin(angle)- Coeff*cos(angle)); %acceleration
 
 %Solving for time
 syms T;
-eqn = 0 == 0.5*acc*T^2 + vi*T;
+eqn = 0 == acc*T + vi;
 solT = double(solve(eqn,T));
 calculatedT = solT(solT>0);
 calculatedT = min(calculatedT);
