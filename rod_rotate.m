@@ -12,7 +12,7 @@ e = 0.2; % coefficient of restituition
 v1= (GlobalXYT(end,1)- GlobalXYT(end-1,1))/(GlobalXYT(end,3)-GlobalXYT(end-1,3));
 syms V2 VR2
 I = (1/3)*mr*(l^2)+ 0.4*mb*rb^2+ mb*(l-rb)^2;
-Ir = (1/3)*mr*(l^2);
+Ir = (1/12)*mr*(l^2);
 eqns =[(l-rb)*mb*(V2 -v1)+I*VR2*(l-rb)==0 ,VR2-V2 -v1*e ==0];
 [v2, vR2] = solve(eqns, [V2, VR2]);
 v2 = double(v2);
@@ -46,7 +46,7 @@ y = GlobalXYT(end,2);
      y = [y; y(end) + l.*(1-cos(dtheta))];
      t = [t; t(end) + timee];
      wr2= omegad;
-     v2 = omegad*l;
+     v2 = omegad*l/2;
      y1 = y(end);
  end
  result =[x y t];
