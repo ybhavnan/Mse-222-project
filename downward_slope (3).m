@@ -26,7 +26,6 @@ else                          %there is impact to the wall and it bounces back
     V_magnitude = sqrt(V_after^2 + 10*g*sin(angle)/7);
 end 
 
-
 %acc = g*(sin(angle)- Coeff*cos(angle)); %acceleration
 acc = 5*g*sin(angle)/7;
 
