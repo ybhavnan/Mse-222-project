@@ -45,7 +45,7 @@ hold on;
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
  %impact to the hanging rod 
- [result3] = rod_rotate(mass, 0.05, 0.0075, 0.07);% we assume the ball gonna stick with the rod and rolling before dropping down
+ [result3] = rod_rotate(mass, 0.05, 0.0075, 0.19);% we assume the ball gonna stick with the rod and rolling before dropping down
  GlobalXYT = [GlobalXYT; result3];
  plot (GlobalXYT(end,1), GlobalXYT(end,2), 'O', 'MarkerSize' , 8 ,'MarkerFaceColor' , 'r');
  hold on;
