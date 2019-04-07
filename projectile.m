@@ -7,8 +7,8 @@ g =-9.81;
 
 x0 = GlobalXYT(end,1);
 y0 = GlobalXYT(end,2);
-VelX = (GlobalXYT(end,1)-GlobalXYT(end-4,1))/(GlobalXYT(end,3)-GlobalXYT(end-4,3))
-VelY = (GlobalXYT(end,2)-GlobalXYT(end-4,2))/(GlobalXYT(end,3)-GlobalXYT(end-4,3))
+VelX = (GlobalXYT(end,1)-GlobalXYT(end-2,1))/(GlobalXYT(end,3)-GlobalXYT(end-2,3))
+VelY = (GlobalXYT(end,2)-GlobalXYT(end-2,2))/(GlobalXYT(end,3)-GlobalXYT(end-2,3))
 
 m = (y2-y1)/(x2-x1)
 b = y2-(m*x2)
