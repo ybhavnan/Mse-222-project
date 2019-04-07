@@ -1,4 +1,4 @@
-downward slope and horizontal path
+% downward slope and horizontal path
 function[result1] = downward_slope(a, distance,b)
 % inputs are angle in degree and length of slope in m and whether the there
 % is impact at the start
