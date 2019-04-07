@@ -307,37 +307,71 @@ hold on;
 % % 
 % 
 
-
 elapsedTime = GlobalXYT(end,3) %total time
 %Plotting Y-X
 x = GlobalXYT(:, 1);
 y = GlobalXYT(:, 2);
+t = GlobalXYT(:, 3);
 plot(x ,y,'LineWidth' , 1 , 'color' ,'b');
 title('Y-X');
 xlim([0,1]);
 ylim([0,1]);
 
-%plotting extra X-t and Y-t
-figure;
+Vx = diff(GlobalXYT(1:end,1))./diff(GlobalXYT(1:end,3));
+Vy = diff(GlobalXYT(1:end,1))./diff(GlobalXYT(1:end,3));
 
-%x with respect to time
-subplot(1,2,1)
-t = GlobalXYT(:, 3);
-plot(t ,x)
-title('x wrt t');
-xlim([0,20]);
-ylim([0,20]);
+Ax = diff(Vx)./diff(GlobalXYT(2:end,3));
+Ay = diff(Vy)./diff(GlobalXYT(2:end,3));
+%plotting extra X-t and Y-t    %uncomment this if you want to see the (Y wrt X) plot
+%figure;                       %since there is a lot of data so you should plot one by one
 
-%y with respect to time
-subplot(1,2,2)
+% %x with respect to time
+% subplot(1,2,1)
 
-plot(t,y)
-title('y wrt t')
-xlim([0,20]);
-ylim([0,20]);
+% plot(t ,x)
+% title('x wrt t');
+% xlim([0,20]);
+% ylim([0,20]);
+% 
+% %y with respect to time
+% subplot(1,2,2)
+% plot(t,y)
+% title('y wrt t')
+% xlim([0,20]);
+% ylim([0,20]);                  %uncomment until here for (Y wrt X) plot
 
 
+% figure;% plotting the velocity %uncomment this if you want to see the velocity plot plot
+% 
+% T =GlobalXYT(2:end,3);
+% subplot(1,2,1)
+% %vx with respect to time
+% plot(T ,Vx)
+% title('Vx wrt t');
+% xlim([-2,20]);
+% ylim([-2,2]);
+% 
+% %vy with respect to time
+% subplot(1,2,2)
+% plot(T,Vy)
+% title('Vy wrt t')
+% xlim([-2,20]); 
+% ylim([-2,20])                   %uncomment until here for the velocity plot
 
+% figure; %plotting the acceleration   %uncomment for the acceleration plot
+% T =GlobalXYT(3:end,3);
+% subplot(1,2,1)
+% %Ax with respect to time
+% plot(T ,Ax)
+% title('Ax wrt t');
+% xlim([-2,20]);
+% 
+% %Ay with respect to time
+% subplot(1,2,2)
+% plot(T,Ay)
+% title('Ay wrt t')
+% xlim([-2,20]);
+% ylim([-2,20])
 
 
 
