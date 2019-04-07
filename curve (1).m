@@ -25,7 +25,6 @@ for i = angle(1:end-1)
     [time]=[time;time(end)+ ((dtheta*r/vf))];  %calculating time and adding it to the global time
      vi = vf;
 end
-
 end
 
     
