@@ -34,7 +34,10 @@ hold on;
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
  % slope 2 degree length 251.27 mm
- [result1] = downward_slope(0.0036,0.25127,false);%the angle here cant take 0 cause the velocity is too small , however it is aproaching the result as long as angle ->0
+ [result1] = downward_slope(0.0036,0.25127,false);
+ %the angle here cant take 0 cause the velocity is too small , however it is aproaching the result as long as angle ->0
+ % the boolean is false as there is no impact at first. Same for other
+ % downward_slope function 
  GlobalXYT = [GlobalXYT; result1];
  plot (GlobalXYT(end,1), GlobalXYT(end,2), 'O', 'MarkerSize' , 8 ,'MarkerFaceColor' , 'r');
  hold on;
@@ -186,7 +189,7 @@ plot (GlobalXYT(end,1), GlobalXYT(end,2), 'O', 'MarkerSize' , 8 ,'MarkerFaceColo
 hold on;
 
 %impacting the wall - we assume the ball goes up then hit the wall then
-%fall down the slope
+%fall down the slope - the boolean is true
 calculatedLength5 = sqrt((GlobalXYT(end,1)-0.22).^2 + (GlobalXYT(end,2)-0.27435).^2);
 [result20] = downward_slope(176,calculatedLength5,true);
 GlobalXYT = [GlobalXYT; result20];
