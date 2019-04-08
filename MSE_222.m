@@ -238,13 +238,13 @@ hold on;
 
 
 %impact to the ramp
-[result26] = Bouncing(4,e);
+[result26] = Bouncing(14.14,e);
 GlobalXYT = [GlobalXYT; result26];
 plot (GlobalXYT(end,1), GlobalXYT(end,2), 'O', 'MarkerSize' , 8 ,'MarkerFaceColor' , 'r');
 hold on;
  
 %upward slope 8th
-[result27] = upward_slope(176);
+[result27] = upward_slope(14.14);
 GlobalXYT = [GlobalXYT; result27];
 plot (GlobalXYT(end,1), GlobalXYT(end,2), 'O', 'MarkerSize' , 8 ,'MarkerFaceColor' , 'r');
 hold on;
@@ -253,6 +253,12 @@ hold on;
 calculatedLength7 = sqrt((GlobalXYT(end,1)-0.29775).^2 + (GlobalXYT(end,2)-0.08797).^2);
 [result28] = downward_slope(165.86,calculatedLength7,false);
 GlobalXYT = [GlobalXYT; result28];
+plot (GlobalXYT(end,1), GlobalXYT(end,2), 'O', 'MarkerSize' , 8 ,'MarkerFaceColor' , 'r');
+hold on;
+
+%projectile after the 8th ramp:
+[result29] = projectile(0.01,0.08816,0.61,0.01478);%0.01478
+GlobalXYT = [GlobalXYT; result29];
 plot (GlobalXYT(end,1), GlobalXYT(end,2), 'O', 'MarkerSize' , 8 ,'MarkerFaceColor' , 'r');
 hold on;
 
